@@ -24,6 +24,7 @@ const styles = (theme) => ({
     boxShadow: "none",
     borderBottom: `2px solid ${theme.palette.grey["100"]}`,
     backgroundColor: "white",
+    overflow: 'hidden',
   },
   flex: {
     display: "flex",
