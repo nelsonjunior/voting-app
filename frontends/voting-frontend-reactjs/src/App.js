@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import "typeface-roboto";
 import Routes from "./routes";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core";
+import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core";
 import { blue, indigo } from "@material-ui/core/colors";
 
 window.__MUI_USE_NEXT_TYPOGRAPHY_VARIANTS__ = true;
@@ -22,9 +22,21 @@ const theme = createMuiTheme({
   },
 });
 
+const useStyles = makeStyles((theme) => ({
+  mainContainer: {
+    backgroundColor: theme.palette.grey["100"],
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+  },
+}));
+
 function App() {
+  const classes = useStyles();
   return (
-    <div>
+    <div className={classes.mainContainer}>
       <ThemeProvider theme={theme}>
         <Routes />
       </ThemeProvider>

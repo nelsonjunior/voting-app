@@ -1,34 +1,41 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core';
-import VoteCard from './components/VoteCard';
-import NavBar from '../../shared/components/NavBar'
+import React from "react";
+import { makeStyles, Grid, CssBaseline } from "@material-ui/core";
+import VoteCard from "./components/VoteCard";
+import NavBar from "../../shared/components/NavBar";
 
 const useStyles = makeStyles((theme) => ({
-    rootContainer: {
-      width: '100%',
-      maxWidth: 1280,
-      margin: 0,
-      padding: 20,
+  root: {
+    flexGrow: 1,
+  },
+  grid: {
+    width: 1200,
+    marginTop: 20,
+    [theme.breakpoints.down("sm")]: {
+      width: "calc(100% - 20px)",
     },
-
-    content: {
-        width: '100%',
-        marginTop: 20,
-    }
+  },
 }));
 
 export default function Home() {
+  const classes = useStyles();
 
-    const classes = useStyles();
-
-    return (
-        <React.Fragment>
-            <NavBar currentPath='Teste' />
-            <div className={classes.rootContainer}>
-                <section className={classes.content}>
-                    <VoteCard />
-                </section>
-            </div>
-        </React.Fragment>
-    )
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <NavBar currentPath="Teste" />
+      <div className={classes.root}>
+        <Grid container justify="center" >
+          <Grid
+            spacing={4}
+            alignItems="center"
+            justify="center"
+            container
+            className={classes.grid}
+          >
+            <VoteCard />
+          </Grid>
+        </Grid>
+      </div>
+    </React.Fragment>
+  );
 }
