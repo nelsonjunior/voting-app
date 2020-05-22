@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Grid } from "@material-ui/core";
+import { makeStyles, Grid, CssBaseline } from "@material-ui/core";
 import VoteCard from "./components/VoteCard";
 import NavBar from "../../shared/components/NavBar";
 
@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <React.Fragment>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       <NavBar currentPath="Teste" />
       <div className={classes.root}>
         <Grid container justify="center" >
