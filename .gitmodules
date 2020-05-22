@@ -1,0 +1,3 @@
+[submodule "frontends/voting-frontend-reactjs"]
+	path = frontends/voting-frontend-reactjs
+	url = https://github.com/nelsonjunior/voting-frontend-reactjs.git
